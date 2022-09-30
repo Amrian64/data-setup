@@ -1003,3 +1003,72 @@ Some Python packages require a compiler to function properly. Let's install one:
 [For x86 systems]@(https://aka.ms/vs/16/release/vc_redist.x86.exe)
 
 If you're unsure about which system you're using please ask a teacher.
+
+
+## SQLite
+
+In a few weeks, we'll talk about databases and SQL. [SQLite](https://sqlite.org/index.html) is a database engine used to execute SQL queries on single-file databases. Let's install it:
+
+In a terminal, execute the following commands:
+
+```bash
+sudo apt-get install sqlite3 libsqlite3-dev
+```
+
+Then run the following command:
+
+```bash
+sqlite3 -version
+```
+
+:heavy_check_mark: If you see a version, you're good :+1:
+
+:x: If not, **ask for a teacher**
+
+
+## PostgreSQL
+
+Sometimes, SQLite is not enough and we will need a more advanced tool called [PostgreSQL](https://www.postgresql.org/), an open-source robust and production-ready database system.
+
+Let's install it now.
+
+Run the following commands:
+
+```bash
+sudo apt install -y postgresql postgresql-contrib libpq-dev build-essential
+```
+
+```bash
+sudo /etc/init.d/postgresql start
+```
+
+```bash
+sudo -u postgres psql --command "CREATE ROLE \"`whoami`\" LOGIN createdb superuser;"
+```
+
+You can configure PostgreSQL to autostart, so you don't have to execute `sudo /etc/init.d/postgresql start` each time you open a new terminal:
+
+```bash
+sudo echo "`whoami` ALL=NOPASSWD:/etc/init.d/postgresql start" | sudo tee /etc/sudoers.d/postgresql
+```
+
+```bash
+sudo chmod 440 /etc/sudoers.d/postgresql
+```
+
+```bash
+echo "sudo /etc/init.d/postgresql start" >> ~/.zshrc
+```
+
+Open a new terminal.
+
+:heavy_check_mark: If you see a `* Starting PostgreSQL 14 database server` message, you're good to go :+1:
+
+:x: If not, **contact a teacher**.
+
+
+
+
+
+
+
