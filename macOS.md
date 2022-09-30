@@ -602,3 +602,61 @@ Here you have it! A complete python virtual env with all the third-party package
 ## DBeaver
 
 Download and install [DBeaver](https://dbeaver.io/), a free and open source powerful tool to connect to any database, explore the schema and even **run SQL queries**.
+
+
+## SQLite
+
+In a few weeks, we'll talk about databases and SQL. [SQLite](https://sqlite.org/index.html) is a database engine used to execute SQL queries on single-file databases. Let's install it:
+
+In a terminal, execute the following commands:
+
+```bash
+brew install sqlite
+```
+
+Then run the following command:
+
+```bash
+sqlite3 -version
+```
+
+:heavy_check_mark: If you see a version, you're good :+1:
+
+:x: If not, **ask for a teacher**
+
+
+## PostgreSQL
+
+Sometimes, SQLite is not enough and we will need a more advanced tool called [PostgreSQL](https://www.postgresql.org/), an open-source robust and production-ready database system.
+
+Let's install it now.
+
+Run the following commands:
+
+```bash
+brew install postgresql
+brew services start postgresql
+```
+
+Once you've done that, let's check that it worked:
+
+```bash
+psql -d postgres
+```
+
+You should you see a new prompt like this one :point_down:
+
+```bash
+psql (14.4)
+Type "help" for help.
+
+postgres=#
+```
+
+:heavy_check_mark: If this is the case, type `\q` then `Enter` to quit this prompt. You're good to go :+1:
+
+:x: If not, please **ask for a teacher**
+
+
+
+
